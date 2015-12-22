@@ -96,6 +96,16 @@ int Onion::ReceiveEventHandler(uint8_t addr)
 			}
 
 			break;
+
+		case (ARDUINO_DOCK_ADDR_NEOPIXEL_INIT):
+			status |= _ReadTwiByte(data);
+			if (status == EXIT_SUCCESS && data != 0) {
+				// set the selected pin to output 
+				pinMode(neopixelPin, OUTPUT);
+				// initialize the neopixel object
+				neopixelStrip = new Adafruit_NeoPixel(neopixelStripLength, neopixelPin, NEO_GRB + NEO_KHZ800);
+			}
+			break;
 		 
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_PIN):
 			status |= _ReadTwiByte(data);
@@ -109,8 +119,6 @@ int Onion::ReceiveEventHandler(uint8_t addr)
 			if (status == EXIT_SUCCESS) {
 				neopixelStripLength = data;
 			}
-
-			neopixelStrip = new Adafruit_NeoPixel(neopixelStripLength, neopixelPin, NEO_GRB + NEO_KHZ800);
 			break;
 
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_DATA):
