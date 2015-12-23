@@ -21,6 +21,7 @@ void Onion::Reset()
 {
 	neopixelPin				= 0;
 	neopixelStripLength		= 0;
+	neopixelBrightness 		= 0xff;
 	neopixelStrip			= NULL;
 }
 
@@ -121,6 +122,18 @@ int Onion::ReceiveEventHandler(uint8_t addr)
 			}
 			break;
 
+		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_BRIGHTNESS):
+			status |= _ReadTwiByte(data);
+			if (status == EXIT_SUCCESS) {
+				neopixelBrightness = data;
+
+				// change the brightness (if neopixel object has been initialized)
+				if (neopixelStrip != NULL) {
+					neopixelStrip->setBrightness(neopixelBrightness);
+				}
+			}
+			break;
+
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_DATA):
 			_neopixelAcceptBuffer();
 			break;
@@ -202,6 +215,10 @@ int Onion::RequestEventHandler(uint8_t &data)
 
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_STRIP_LENGTH):
 			data 	= (uint8_t)neopixelStripLength;
+			break;
+
+		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_BRIGHTNESS):
+			data 	= (uint8_t)neopixelBrightness;
 			break;
 
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_DATA):
