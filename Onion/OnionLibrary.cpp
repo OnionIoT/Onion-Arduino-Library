@@ -127,7 +127,7 @@ int Onion::ReceiveEventHandler(uint8_t addr)
 			if (status == EXIT_SUCCESS) {
 				neopixelBrightness = data;
 
-				// change the brightness (if neopixel object has been initialized)
+				// change the brightness
 				if (neopixelStrip != NULL) {
 					neopixelStrip->setBrightness(neopixelBrightness);
 				}
@@ -146,7 +146,7 @@ int Onion::ReceiveEventHandler(uint8_t addr)
 			status |= _ReadTwiByte(blue);
 
 			// set the datapoint info
-			if (status == EXIT_SUCCESS) {
+			if (status == EXIT_SUCCESS && neopixelStrip != NULL) {
 				neopixelStrip->setPixelColor(i, red, green, blue);
 			}
 			lastCmdData 	= i;
@@ -154,8 +154,20 @@ int Onion::ReceiveEventHandler(uint8_t addr)
 
 		case (ARDUINO_DOCK_ADDR_SHOW_NEOPIXEL):
 			status |= _ReadTwiByte(data);
-			if (status == EXIT_SUCCESS && data != 0) {
+			if (status == EXIT_SUCCESS && data != 0 && neopixelStrip != NULL) {
 				neopixelStrip->show();
+			}
+
+		case (ARDUINO_DOCK_ADDR_DELETE_NEOPIXEL):
+			status |= _ReadTwiByte(data);
+			if (status == EXIT_SUCCESS && data != 0 && neopixelStrip != NULL) {
+				delete neopixelStrip;
+				neopixelStrip 	= NULL;
+				lastCmdData 	= 0xde;
+				// LAZAR: Note: this never executes for some reason...
+			}
+			else {
+				lastCmdData 	= 0xaa;
 			}
 
 		default:
@@ -205,6 +217,10 @@ int Onion::RequestEventHandler(uint8_t &data)
 
 	// respond based on the last addr that was written to
 	switch(lastCmdAddr) {
+		case (ARDUINO_DOCK_ADDR_READBACK):
+			data 	= (uint8_t)lastCmdData;
+			break;
+
 		case (ARDUINO_DOCK_ADDR_RESET):
 			data 	= 0xBE;
 			break;
@@ -219,6 +235,10 @@ int Onion::RequestEventHandler(uint8_t &data)
 
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_BRIGHTNESS):
 			data 	= (uint8_t)neopixelBrightness;
+			break;
+
+		case (ARDUINO_DOCK_ADDR_DELETE_NEOPIXEL):
+			data 	= (neopixelStrip == NULL ? 0xde : 0x01);
 			break;
 
 		case (ARDUINO_DOCK_ADDR_SET_NEOPIXEL_DATA):
