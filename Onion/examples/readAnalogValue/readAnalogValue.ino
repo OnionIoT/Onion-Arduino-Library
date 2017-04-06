@@ -13,9 +13,10 @@ void loop() {
 	if (Serial.available() > 0) {
 		// read the input
 		int inByte = Serial.read();
+		delay(500); // small delay before responding
 
 		// respond only if correct command is received
-		if (inByte == (int)'r') {
+		if ((char)inByte == 'r') {
 			// respond with analog measurement
 			Serial.println(analogValue, DEC);
 		}
