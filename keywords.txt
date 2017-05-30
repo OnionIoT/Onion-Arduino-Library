@@ -1,0 +1,47 @@
+#######################################
+# Syntax Coloring Map For ExampleLibrary
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Onion	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Reset	KEYWORD2
+ArduinoDockSetup	KEYWORD2
+ReceiveEventHandler	KEYWORD2
+RequestEventHandler	KEYWORD2
+SoftwareReset	KEYWORD2
+Reset	KEYWORD2
+Reset	KEYWORD2
+Reset	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+Reset	LITERAL1
+REBOOT_STRING                  LITERAL1
+ARDUINO_DOCK_I2C_DEVICE_ADDR   LITERAL1
+
+ARDUINO_DOCK_ADDR_READBACK	LITERAL1
+ARDUINO_DOCK_ADDR_RESET	LITERAL1
+ARDUINO_DOCK_CMD_RESET	 	LITERAL1
+
+ARDUINO_DOCK_ADDR_NEOPIXEL_INIT	LITERAL1
+ARDUINO_DOCK_ADDR_SET_NEOPIXEL_PIN	LITERAL1
+ARDUINO_DOCK_ADDR_SET_NEOPIXEL_STRIP_LENGTH	LITERAL1
+ARDUINO_DOCK_ADDR_SET_NEOPIXEL_DATA	LITERAL1
+ARDUINO_DOCK_ADDR_SET_NEOPIXEL_DATAPOINT	LITERAL1
+ARDUINO_DOCK_ADDR_SHOW_NEOPIXEL	LITERAL1
+ARDUINO_DOCK_ADDR_SET_NEOPIXEL_BRIGHTNESS	LITERAL1
+ARDUINO_DOCK_ADDR_DELETE_NEOPIXEL 	LITERAL1
