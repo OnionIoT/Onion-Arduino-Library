@@ -4,6 +4,8 @@ Onion library for use with the Arduino IDE and the Arduino Dock.
 
 Combine the ease of use of Arduino with the flexibility and power of Linux with the Onion Omega!
 
+![Arduino Dock R2](./extras/arduino-dock-r2.jpg)
+
 ## Arduino Dock Documentation
 
 Full and up-to-date documentation can be found in our docs site:
@@ -11,6 +13,18 @@ Full and up-to-date documentation can be found in our docs site:
 * https://docs.onion.io
 * https://docs.onion.io/omega2-docs/arduino-dock-2.html
 * https://docs.onion.io/omega2-docs/flash-arduino-dock-wirelessly.html#flash-arduino-dock-wirelessly
+
+## Requirements
+
+* Arduino IDE 1.8.0 or later
+* [Arduino Dock R2](https://onion.io/store/arduino-dock-r2/)
+    * The Arduino Dock R1 model is no longer in production, but still compatible with this library (see "Preparing to Flash" below).
+* An Onion Omega board to flash sketches to the Dock:
+    * [Omega2](https://onion.io/store/omega2/)
+    * [Omega2+](https://onion.io/store/omega2p/)
+    * Omega 1 - no longer in production, but still compatible
+
+If you want to buy Onion products outside of the US, you can also find a [local distributor near you](https://onion.io/where-to-buy).
 
 ## Contents
 
@@ -25,8 +39,6 @@ Coming soon!
 You can find example sketches by clicking on `File -> Examples -> Onion`.
 
 ### Preparing to Flash
-
-**Note**: The Arduino Dock does **not** have an onboard USB to serial converter. You will need an [Onion Omega-type board](https://onion.io/buy/) (Omega1, Omega2, Omega2+) to flash Arduino code to the Dock.
 
 The flashing process will depend if you are using the first model of the Dock (R1) or the second (R2).
 
