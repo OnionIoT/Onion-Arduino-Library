@@ -90,15 +90,3 @@ We've made sweeping improvements in this revision, so you don't have to include 
 Follow the instructions in our Arduino Dock documentation: 
 
 https://docs.onion.io/omega2-docs/flash-arduino-dock-wirelessly.html
-
-<!-- ## Installation Instructions
-
-* Clone the [Onion Arduino Library repo](https://github.com/OnionIoT/Onion-Arduino-Library) to your computer
-* Open the Arduino IDE
-  * Open the Sketch Menu, and then Include Library -> Add .ZIP Library
-  ![Add library](https://i.imgur.com/na7wNcY.png)
-  * Navigate to where the Onion Arduino Library repo has been cloned
-  * Select Onion-Arduino-Library.zip
-* The library is now installed, it can be included in your sketches by opening the Sketch menu -> Include Library -> Onion 
-
-![Add the Onion Library](https://i.imgur.com/MjYaLTO.png) -->
