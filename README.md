@@ -37,9 +37,13 @@ If you want to buy Onion products outside of the US, you can also find a [local 
 
 This library contains code needed to flash the Arduino Dock R1 model, as well as example sketches that showcase how the Atmel microcontroller and Omega can exchange data and commands.
 
-### Library Functions
+### Classes
 
-Coming soon!
+#### Onion
+
+* Required for flashing Model R1 units. See "Preparing to Flash" for full instructions.
+
+More coming soon!
 
 ### Example Sketches
 
