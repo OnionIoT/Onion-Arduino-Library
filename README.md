@@ -26,6 +26,13 @@ Full and up-to-date documentation can be found in our docs site:
 
 If you want to buy Onion products outside of the US, you can also find a [local distributor near you](https://onion.io/where-to-buy).
 
+## Installation
+
+1. Open the Arduino IDE and click `Sketch -> Include Library -> Manage Libraries...`
+1. Search for `Onion Arduino Library`
+1. Click `Install`
+1. Close the Library Manager and you're ready to go!
+
 ## Contents
 
 This library contains code needed to flash the Arduino Dock R1 model, as well as example sketches that showcase how the Atmel microcontroller and Omega can exchange data and commands.
