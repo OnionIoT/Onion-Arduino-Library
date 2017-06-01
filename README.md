@@ -43,7 +43,7 @@ This library contains code needed to flash the Arduino Dock R1 model, as well as
 
 * Required for flashing Model R1 units. See "Preparing to Flash" for full instructions.
 
-More coming soon!
+More information coming soon!
 
 ### Example Sketches
 
