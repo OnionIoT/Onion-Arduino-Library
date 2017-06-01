@@ -17,9 +17,7 @@ ArduinoDockSetup	KEYWORD2
 ReceiveEventHandler	KEYWORD2
 RequestEventHandler	KEYWORD2
 SoftwareReset	KEYWORD2
-Reset	KEYWORD2
-Reset	KEYWORD2
-Reset	KEYWORD2
+
 
 #######################################
 # Instances (KEYWORD2)
@@ -29,7 +27,6 @@ Reset	KEYWORD2
 # Constants (LITERAL1)
 #######################################
 
-Reset	LITERAL1
 REBOOT_STRING                  LITERAL1
 ARDUINO_DOCK_I2C_DEVICE_ADDR   LITERAL1
 
